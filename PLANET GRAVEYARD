@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Name | Official Site (Cursed Space)</title>
+    <!-- Horror Fonts -->
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <style>
+        :root {
+            --blood-red: #8b0000;
+            --bg-dark: #050505;
+        }
+
+        /* 1. Deep Space & Starfield Styles */
+        body { 
+            font-family: 'Courier New', Courier, monospace; 
+            margin: 0; 
+            overflow-x: hidden;
+            background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%), 
+                        url('https://images.unsplash.com');
+            background-attachment: fixed;
+            background-size: cover;
+            color: #ccc;
+            cursor: none; /* Custom blood cursor will replace this */
+        }
+
+        /* Star Layers */
+        #stars, #stars2, #stars3 { position: fixed; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; z-index: 0; }
+        #stars { width: 1px; height: 1px; box-shadow: 104px 582px #FFF, 629px 342px #FFF, 1530px 24px #FFF; animation: spaceDrift 50s linear infinite; }
+        #stars2 { width: 2px; height: 2px; box-shadow: 200px 400px #FFF, 800px 100px #FFF; animation: spaceDrift 100s linear infinite; }
+        @keyframes spaceDrift { from { transform: translateY(0px); } to { transform: translateY(-2000px); } }
+
+        /* 2. Blood Cursor */
+        #blood-cursor {
+            position: fixed; width: 32px; height: 32px;
+            background: url('https://cdn-icons-png.flaticon.com') no-repeat center;
+            background-size: contain; pointer-events: none; z-index: 10001;
+        }
+
+        /* 3. Haunted Elements */
+        header { 
+            height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; 
+            text-align: center; position: relative; z-index: 10;
+        }
+        h1 { 
+            font-family: 'Nosifer', cursive; font-size: 4rem; color: var(--blood-red); 
+            animation: flicker 4s infinite; text-shadow: 0 0 15px black;
+        }
+        @keyframes flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+            20%, 24%, 55% { opacity: 0.3; }
+        }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; position: relative; z-index: 10; }
+        
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .gallery img { 
+            width: 100%; height: 250px; object-fit: cover; border: 1px solid #333;
+            filter: grayscale(100%) brightness(0.6); animation: float 5s ease-in-out infinite;
+        }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+
+        /* 4. Ghostly Astronaut */
+        #astro-ghost {
+            position: fixed; width: 150px; height: 150px;
+            background: url('https://pngimg.com') no-repeat center;
+            background-size: contain; filter: grayscale(1) opacity(0.3) blur(1px);
+            z-index: 2; pointer-events: none;
+            animation: drift 40s linear infinite;
+        }
+        @keyframes drift {
+            0% { left: -200px; top: 10%; transform: rotate(0deg); }
+            100% { left: 110%; top: 80%; transform: rotate(360deg); }
+        }
+
+        /* 5. Ritual & Glitch */
+        .melt { transform: translateY(1000px) scaleY(2) !important; opacity: 0 !important; transition: 8s; }
+        #ritual-void { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; opacity: 0; display: none; z-index: 10002; transition: 10s; }
+        
+        .glitch-active { backdrop-filter: invert(1) hue-rotate(90deg); animation: glitch-anim 0.2s infinite; }
+        @keyframes glitch-anim { 0% { transform: translate(-5px, 5px); } 50% { transform: translate(5px, -5px); } }
+
+        .cta-button { font-family: 'Creepster'; background: var(--blood-red); color: white; padding: 15px 40px; border: none; cursor: pointer; text-decoration: none; font-size: 1.5rem; }
+    </style>
+</head>
+<body>
+
+<div id="blood-cursor"></div>
+<div id="ritual-void"></div>
+<div id="astro-ghost"></div>
+<div id="stars"></div>
+<div id="stars2"></div>
+<div id="glitch-overlay" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:999;"></div>
+
+<header>
+    <h1>ARTIST NAME</h1>
+    <p style="font-family: 'Creepster'; font-size: 1.5rem;">Lost in the Dead Space...</p>
+    <a href="#music" class="cta-button">LISTEN TO THE VOID</a>
+</header>
+
+<div class="container">
+    <section id="music" style="text-align: center; margin-bottom: 80px;">
+        <h2 style="font-family: 'Creepster'; font-size: 2.5rem; color: var(--blood-red);">Cursed Frequencies</h2>
+        <!-- Spotify Inverted for Space Theme -->
+        <iframe src="https://open.spotify.com" width="100%" height="152" frameborder="0" style="border-radius:12px; filter: invert(1) hue-rotate(180deg);"></iframe>
+    </section>
+
+    <section class="gallery">
+        <img src="https://images.unsplash.com" alt="Void">
+        <img src="https://images.unsplash.com" alt="Ghost">
+    </section>
+
+    <section style="background: rgba(0,0,0,0.8); border: 1px solid var(--blood-red); padding: 40px; margin-top: 50px; text-align: center;">
+        <h2 style="font-family: 'Creepster';">Join the Eternal Broadcast</h2>
+        <input type="email" placeholder="Your Soul's Email" style="padding: 10px; width: 60%; background: #000; color: #fff; border: 1px solid #444;">
+        <button class="cta-button" onclick="alert('The transmission has failed...')">SUBSCRIBE</button>
+    </section>
+</div>
+
+<!-- NASA Audio (Starts on first click) -->
+<div id="void-music" style="display:none;">
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" 
+        src="https://w.soundcloud.com">
+    </iframe>
+</div>
+
+<script>
+    // 1. Blood Cursor Movement
+    const cursor = document.getElementById('blood-cursor');
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    // 2. NASA Audio Activation
+    document.addEventListener('click', () => {
+        document.getElementById('void-music').style.display = 'block';
+    }, { once: true });
+
+    // 3. Idle Glitch
+    let idleTimer;
+    function resetTimer() {
+        document.getElementById('glitch-overlay').classList.remove('glitch-active');
+        clearTimeout(idleTimer);
+        idleTimer = setTimeout(() => { document.getElementById('glitch-overlay').classList.add('glitch-active'); }, 10000);
+    }
+    window.onload = resetTimer;
+    document.onmousemove = resetTimer;
+
+    // 4. Ritual: ILOVEYOU
+    let typed = "";
+    window.addEventListener('keydown', (e) => {
+        typed += e.key.toLowerCase();
+        if (typed.includes("iloveyou")) {
+            document.getElementById('ritual-void').style.display = 'block';
+            setTimeout(() => { document.getElementById('ritual-void').style.opacity = '1'; }, 100);
+            document.querySelectorAll('h1, h2, p, img, .cta-button, iframe').forEach(el => el.classList.add('melt'));
+        }
+    });
+</script>
+
+</body>
+</html>
